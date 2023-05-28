@@ -1,6 +1,6 @@
 # Auto Typing Using Css
 
-- Live Site URL: https://mks-four-card-feature-section.netlify.app/
+- Live Site URL: https://mks-short-projects.netlify.app/css/auto-typing/
 
 ## Built with
 
