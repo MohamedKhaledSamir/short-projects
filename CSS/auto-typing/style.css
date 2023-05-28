@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: darkred;
+}
+
+h1 {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.616);
+  display: flex;
+  text-shadow: 0px 0px 54px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.job {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  overflow: hidden;
+  margin-left: 6px;
+  animation: changeWidth 7s steps(10) both infinite;
+}
+
+@keyframes changeWidth {
+  0% {
+    width: 100px;
+  }
+
+  15% {
+    width: 0px;
+  }
+
+  33% {
+    width: 90px;
+  }
+
+  48% {
+    width: 0px;
+  }
+
+  66% {
+    width: 100px;
+  }
+
+  80% {
+    width: 0px;
+  }
+}
+/*pointer style*/
+.job::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 0.8px;
+  background-color: black;
+  animation: opacity 0.2s linear infinite;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/*pointer style end*/
+
+/* Job content Style */
+.job::before {
+  content: "Programmer";
+  height: fit-content;
+  width: fit-content;
+  animation: changeText 7s steps(10) both infinite;
+}
+
+@keyframes changeText {
+  0% {
+    content: "Programmer";
+  }
+
+  33% {
+    content: "Designer";
+  }
+
+  66% {
+    content: "Freelancer";
+  }
+}
+/* Job content Style End */
