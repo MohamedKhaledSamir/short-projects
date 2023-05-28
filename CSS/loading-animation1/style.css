@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  font-family: Tahoma;
+  align-items: center;
+  justify-content: center;
+  background-color: blanchedalmond;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 10px;
+  color: brown;
+
+  display: flex;
+}
+
+span {
+  animation: removeLetter 1.5s ease-in-out alternate infinite;
+}
+
+@keyframes removeLetter {
+  from {
+    transform: translate(0px, 0px) rotate(0deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-20px) rotate(30deg);
+    opacity: 0;
+  }
+}
