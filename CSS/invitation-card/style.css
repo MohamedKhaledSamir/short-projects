@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: Tahoma, monospace;
+  background-color: aliceblue;
+  perspective: 2000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  position: absolute;
+  transform-style: preserve-3d;
+  width: 350px;
+  height: 500px;
+  transform: rotate(-30deg) skewX(15deg);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 892px) {
+  .card {
+    width: 250px;
+    height: 390px;
+  }
+}
+@media (max-width: 662px) {
+  .card {
+    width: 200px;
+    height: 270px;
+  }
+}
+@media (max-width: 500px) {
+  .card {
+    width: 130px;
+    height: 190px;
+  }
+}
+
+.cover,
+.page {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+}
+
+.cover {
+  transform-origin: left;
+  transition: 1s ease-out;
+}
+
+.page::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: 0.7s ease-in-out;
+}
+
+/* hovering start */
+.card:hover .cover {
+  transform: rotateY(-180deg);
+}
+.card:hover .page::before {
+  width: 0px;
+}
+/* hovering END */
