@@ -1,4 +1,4 @@
-# 3rd Book
+# Images Hover 3
 
 - Live Site URL: https://mks-short-projects.netlify.app/css/images-hover-3/
 
