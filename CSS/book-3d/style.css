@@ -37,6 +37,7 @@ img {
   transform: skewY(-43deg) translate(-1px, 13px);
   border-top-right-radius: 1.7px;
   border-bottom-left-radius: 5.2px;
+  box-shadow: inset 13px 0 10px 0px rgba(0, 0, 0, 0.1);
 }
 .book::after {
   content: "";
