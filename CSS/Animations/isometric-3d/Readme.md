@@ -1,4 +1,4 @@
-# isometric 3d
+# isometric 3rd
 
 - Live Site URL: https://mks-short-projects.netlify.app/css/isometric-3d/
 

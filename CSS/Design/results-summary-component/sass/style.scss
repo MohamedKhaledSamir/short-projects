@@ -1,0 +1,245 @@
+@use "./globals";
+@use "./variables" as *;
+@use "./helpers" as *;
+
+body {
+  background-color: $White;
+
+  @include smallScreens {
+    margin-bottom: 10px;
+  }
+}
+
+.container {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 700px;
+  border-radius: 30px;
+  height: fit-content;
+  background-color: $White;
+  display: flex;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+  @include smallScreens {
+    flex-direction: column;
+    width: 320px;
+    margin-top: 10px;
+  }
+
+  .result {
+    flex-basis: 50%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    background-image: linear-gradient(
+      to bottom left,
+      $Lightslateblue,
+      $Lightroyalblue
+    );
+
+    @include smallScreens {
+      flex-basis: 100%;
+      height: 40%;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 20px;
+      color: $Lightlavender;
+    }
+
+    .score-number {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      padding: 70px 40px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      background-image: linear-gradient(to bottom, #4628d6, $Persianblue);
+      border-radius: 50%;
+      justify-content: center;
+
+      @include smallScreens {
+        width: 120px;
+        height: 120px;
+        padding: 30px 20px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+
+      .value {
+        font-size: 56px;
+        color: $White;
+        @include smallScreens {
+          font-size: 37px;
+        }
+      }
+
+      .base {
+        color: $Lightlavender;
+        opacity: 0.6;
+      }
+    }
+
+    .score-text {
+      text-align: center;
+      .value {
+        font-size: 26px;
+        color: $White;
+
+        @include smallScreens {
+          font-size: 21px;
+        }
+      }
+
+      .description {
+        color: $Lightlavender;
+        font-size: $Paragraphsize;
+        width: 247px;
+        margin-top: 20px;
+
+        @include smallScreens {
+          font-size: 13px;
+          width: 232px;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .summary {
+    flex-basis: 50%;
+    border-radius: 30px;
+    padding: 30px;
+
+    @include smallScreens {
+      flex-basis: 100%;
+      height: 60%;
+      padding: 0 13px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .title {
+      font-size: 20px;
+      margin-bottom: 30px;
+
+      @include smallScreens {
+        margin-bottom: 21px;
+      }
+    }
+
+    .values {
+      margin-bottom: 30px;
+      padding: 0 10px;
+
+      @include smallScreens {
+        margin-bottom: 21px;
+      }
+
+      .value {
+        padding: 15px 15px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include smallScreens {
+          padding: 15px 15px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+          @include smallScreens {
+            margin-bottom: 7px;
+          }
+        }
+
+        .name {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 7px;
+          }
+        }
+
+        .score {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          font-weight: bold;
+
+          .top-value,
+          .separator {
+            color: rgba(black, 0.4);
+          }
+        }
+      }
+    }
+
+    .reaction {
+      background-color: rgba($Lightred, 0.07);
+
+      .name {
+        .text {
+          color: $Lightred;
+        }
+      }
+    }
+    .memory {
+      background-color: rgba($Orangeyyellow, 0.07);
+
+      .name {
+        .text {
+          color: $Orangeyyellow;
+        }
+      }
+    }
+    .verbal {
+      background-color: rgba($Greenteal, 0.07);
+
+      .name {
+        .text {
+          color: $Greenteal;
+        }
+      }
+    }
+    .visual {
+      background-color: rgba($Cobaltblue, 0.07);
+
+      .name {
+        .text {
+          color: $Cobaltblue;
+        }
+      }
+    }
+
+    .continue-btn {
+      background-color: $Darkgrayblue;
+      text-align: center;
+      color: $White;
+      cursor: pointer;
+      margin: 0px 20px;
+      padding: 13px 0;
+      border-radius: 20px;
+
+      &:hover {
+        background-image: linear-gradient(
+          to bottom,
+          $Lightslateblue,
+          $Lightroyalblue
+        );
+      }
+    }
+  }
+}
