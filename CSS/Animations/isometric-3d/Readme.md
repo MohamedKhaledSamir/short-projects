@@ -1,6 +1,6 @@
 # isometric 3rd
 
-- Live Site URL: https://mks-short-projects.netlify.app/css/isometric-3d/
+- Live Site URL: https://mks-short-projects.netlify.app/css/animations/isometric-3d/
 
 ## Built with
 

@@ -30,20 +30,19 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://www.frontendmentor.io/solutions/fylo-data-storage-component-4M2CdeS9Ws
-- Live Site URL: https://mks-fylo-data-storage-component.netlify.app/
+- Live Site URL: https://mks-short-projects.netlify.app/css/design/fylo-data-storage-component/
 
 ## My process
 
 ### Built with
 
-- html
-- sass
+- HTML
+- CSS
 
 ### What I learned
 
 - use media queries
 - use flex-box
-- use organized sass files
 
 ## Author
 

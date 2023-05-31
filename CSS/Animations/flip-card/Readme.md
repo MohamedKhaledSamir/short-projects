@@ -1,6 +1,6 @@
 # Flip Card
 
-- Live Site URL: https://mks-short-projects.netlify.app/css/flip-card/
+- Live Site URL: https://mks-short-projects.netlify.app/css/animations/flip-card/
 
 ## Built with
 

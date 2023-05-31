@@ -1,6 +1,6 @@
 # Invitation Card
 
-- Live Site URL: https://mks-short-projects.netlify.app/css/invitation-card/
+- Live Site URL: https://mks-short-projects.netlify.app/css/animations/invitation-card/
 
 ## Built with
 

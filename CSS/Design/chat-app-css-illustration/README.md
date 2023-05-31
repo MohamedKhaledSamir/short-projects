@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://www.frontendmentor.io/solutions/chat-app-css-illustration-bwdP5lEaZl
-- Live Site URL: https://mks-chat-app-css-illustration.netlify.app/
+- Live Site URL: https://mks-short-projects.netlify.app/css/design/chat-app-css-illustration/
 
 ## My process
 
@@ -39,14 +39,12 @@ Users should be able to:
 
 - HTML
 - CSS
-- Flexbox
-- Sass
 
 ### What I learned
 
-- design complex design with css
+- complicated designs
+- use media queries
 - use flex-box
-- use organized sass files
 
 ## Author
 

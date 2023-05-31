@@ -31,20 +31,19 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://www.frontendmentor.io/solutions/single-price-grid-component--0ViX-5DfG
-- Live Site URL: https://mks-single-price-grid-component.netlify.app/
+- Live Site URL: https://mks-short-projects.netlify.app/css/design/single-price-grid-component/
 
 ## My process
 
 ### Built with
 
-- html
-- sass
+- HTML
+- CSS
 
 ### What I learned
 
 - use grid-box
 - use media queries
-- use organized sass files
 
 ## Author
 

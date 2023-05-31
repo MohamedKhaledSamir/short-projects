@@ -1,5 +1,3 @@
-# CSS JS Short Projects 
+# CSS JS Short Projects
 
-
-
-### This repository is a showcase for my css and js skills in a short project approach
+#### This repository is a showcase for my css and js skills in a short project approach

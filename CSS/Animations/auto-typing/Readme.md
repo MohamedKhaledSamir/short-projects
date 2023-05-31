@@ -1,6 +1,6 @@
 # Auto Typing Using Css
 
-- Live Site URL: https://mks-short-projects.netlify.app/css/auto-typing/
+- Live Site URL: https://mks-short-projects.netlify.app/css/animations/auto-typing/
 
 ## Built with
 

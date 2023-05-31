@@ -27,19 +27,19 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://www.frontendmentor.io/solutions/results-summary-component-B0jNqY-xjt
-- Live Site URL: https://mks-results-summary-component.netlify.app/
+- Live Site URL: https://mks-short-projects.netlify.app/css/design/results-summary-component/
 
 ## My process
 
 ### Built with
 
-- html
-- sass
+- HTML
+- CSS
 
 ### What I learned
 
 - use flex-box
-- use organized sass files
+- use media queries
 
 ## Author
 

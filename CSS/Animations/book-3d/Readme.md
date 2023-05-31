@@ -1,6 +1,6 @@
 # 3rd Book
 
-- Live Site URL: https://mks-short-projects.netlify.app/css/book-3d/
+- Live Site URL: https://mks-short-projects.netlify.app/css/animations/book-3d/
 
 ## Built with
 
