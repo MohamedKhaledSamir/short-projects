@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: Tahoma, monospace;
+  background-color: brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-right: 5px solid ivory;
+  border-bottom: 5px solid ivory;
+
+  position: relative;
+  animation: rotateContainer 4s ease-in-out alternate infinite;
+}
+
+@keyframes rotateContainer {
+  0% {
+    rotate: 0;
+  }
+
+  50% {
+    rotate: 360deg;
+  }
+
+  100% {
+    rotate: 0;
+  }
+}
+
+.ball {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  rotate: -45deg;
+  animation: moveBall 4s ease-in-out infinite;
+}
+
+.ball::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+.ball::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  transform: translateY(-50%);
+  right: 12px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+@keyframes moveBall {
+  0% {
+    rotate: 0;
+  }
+
+  50% {
+    rotate: 180deg;
+  }
+
+  100% {
+    rotate: 0;
+  }
+}
