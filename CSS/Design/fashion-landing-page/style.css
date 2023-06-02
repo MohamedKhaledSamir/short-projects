@@ -125,7 +125,7 @@ main .year {
 
 .year .scroll-down {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   left: 40px;
   writing-mode: vertical-rl;
   color: white;
