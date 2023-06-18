@@ -1,0 +1,101 @@
+.container input, .container svg, .container .line, .container .images {
+  position: absolute;
+  inset: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(113, 167, 164);
+}
+
+header {
+  font-size: 3.2vmin;
+  margin: 30px;
+  margin-inline: auto;
+  font-weight: 500;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  color: white;
+}
+header::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.568);
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+header::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.568);
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container {
+  width: 93vmin;
+  height: 93vmin;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  --position: 50%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+.container .images img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
+}
+.container .images img.before {
+  position: absolute;
+  inset: 0;
+  width: var(--position);
+}
+.container .line {
+  width: 0.2rem;
+  height: 100%;
+  background-color: white;
+  z-index: 11;
+  left: var(--position);
+  transform: translateX(-50%);
+}
+.container svg {
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  left: var(--position);
+  transform: translate(-50%, -50%);
+  fill: black;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 12;
+}
+.container input {
+  opacity: 0;
+  z-index: 100;
+  cursor: pointer;
+}
