@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-main .carousel .card, main .left,
-main .right, main, body {
+main .carousel .card, main .left-nav,
+main .right-nav, main, body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,8 +39,8 @@ main {
 main.dragging .carousel {
   scroll-snap-type: none;
 }
-main .left,
-main .right {
+main .left-nav,
+main .right-nav {
   width: 40px;
   height: 40px;
   top: 50%;
@@ -53,14 +53,14 @@ main .right {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: transform 0.1s linear;
 }
-main .left:hover,
-main .right:hover {
+main .left-nav:hover,
+main .right-nav:hover {
   background-color: #f0f0f0;
 }
-main .left {
+main .left-nav {
   left: -10px;
 }
-main .right {
+main .right-nav {
   right: -10px;
 }
 main .carousel {
