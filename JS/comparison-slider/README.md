@@ -6,7 +6,7 @@
 
 - HTML
 - SASS
-  -JS
+- JS
 
 ##### Authors
 
