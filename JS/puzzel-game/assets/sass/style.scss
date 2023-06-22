@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+%center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 1s;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.win-screen {
+  @extend %center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1000;
+  flex-direction: column;
+  gap: 30px;
+  background: linear-gradient(
+    to bottom right,
+    rgb(255, 196, 0),
+    rgb(255, 153, 0)
+  );
+
+  &.win {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    color: black;
+  }
+}
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  @extend %center;
+  @media (max-width: 768px) {
+    //if it was kept center in small screens, some elements won't be visible
+    justify-content: flex-start;
+  }
+  flex-direction: column;
+  gap: 40px;
+
+  //Styling for welcome screen
+  &.welcome {
+    max-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(
+      to bottom right,
+      rgb(255, 196, 0),
+      rgb(255, 153, 0)
+    );
+    @media (max-width: 768px) {
+      //keep it center in small screens, as there are no many elements in welcome screen to worry about
+      justify-content: center;
+    }
+
+    header {
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .game {
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .welcome-screen {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  //Styling for game screen
+  header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 1;
+    pointer-events: all;
+    user-select: auto;
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .moves {
+      font-size: 18px;
+    }
+  }
+
+  .welcome-screen {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    text-align: center;
+
+    .welcome-title {
+      line-height: 1.7;
+      margin-bottom: 50px;
+
+      .theme {
+        color: brown;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .game {
+    opacity: 1;
+    pointer-events: all;
+    user-select: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 30px;
+    }
+    width: 100%;
+
+    .puzzle {
+      display: grid;
+      width: 320px;
+      gap: 2px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+
+      padding: 5px;
+
+      &.win {
+        gap: 0;
+        border: 1px solid green;
+      }
+
+      .piece {
+        &.col2-3.row2-3 {
+          grid-column: 2/3;
+          grid-row: 2/3;
+        }
+        &.col3-4.row1-2 {
+          grid-column: 3/4;
+          grid-row: 1/2;
+        }
+        &.col1-2.row1-2 {
+          grid-column: 1/2;
+          grid-row: 1/2;
+        }
+        &.col2-3.row3-4 {
+          grid-column: 2/3;
+          grid-row: 3/4;
+        }
+        &.col3-4.row2-3 {
+          grid-column: 3/4;
+          grid-row: 2/3;
+        }
+        &.col1-2.row2-3 {
+          grid-column: 1/2;
+          grid-row: 2/3;
+        }
+        &.col1-2.row3-4 {
+          grid-column: 1/2;
+          grid-row: 3/4;
+        }
+        &.col2-3.row1-2 {
+          grid-column: 2/3;
+          grid-row: 1/2;
+        }
+        &.col3-4.row3-4 {
+          grid-column: 3/4;
+          grid-row: 3/4;
+        }
+      }
+    }
+
+    .finished-example {
+      width: 320px;
+    }
+  }
+}

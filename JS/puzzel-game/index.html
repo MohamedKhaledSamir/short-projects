@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Puzzle Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- MY JS -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="win-screen">
+      <h2>Congratulations !!</h2>
+      <p class="result">You did it with 60 moves</p>
+      <button class="btn-again">play again</button>
+    </div>
+
+    <div class="container welcome">
+      <header>
+        <h1 class="title">Puzzle Game</h1>
+
+        <span class="moves">0 moves</span>
+      </header>
+
+      <div class="welcome-screen">
+        <h2 class="welcome-title">
+          Welcome To Puzzle Game <br />
+          <span class="theme">Dog Theme</span>
+        </h2>
+
+        <button class="btn-start">Start Game</button>
+      </div>
+
+      <main class="game">
+        <div class="puzzle">
+          <div id="part1" class="piece col2-3 row2-3">
+            <img src="./assets/images/image_part_001.png" alt="part of a dog" />
+          </div>
+          <div id="part2" class="piece col3-4 row1-2">
+            <img src="./assets/images/image_part_002.png" alt="part of a dog" />
+          </div>
+          <div id="part3" class="piece col1-2 row1-2">
+            <img src="./assets/images/image_part_003.png" alt="part of a dog" />
+          </div>
+          <div id="part4" class="piece col2-3 row3-4">
+            <img src="./assets/images/image_part_004.png" alt="part of a dog" />
+          </div>
+          <div id="part5" class="piece col3-4 row2-3">
+            <img src="./assets/images/image_part_005.png" alt="part of a dog" />
+          </div>
+          <div id="part6" class="piece col1-2 row2-3">
+            <img src="./assets/images/image_part_006.png" alt="part of a dog" />
+          </div>
+          <div id="part7" class="piece col1-2 row3-4">
+            <img src="./assets/images/image_part_007.png" alt="part of a dog" />
+          </div>
+          <div id="part8" class="piece col2-3 row1-2">
+            <img src="./assets/images/image_part_008.png" alt="part of a dog" />
+          </div>
+          <div id="part9" class="piece empty-piece col3-4 row3-4">
+            <img src="./assets/images/image_part_009.png" alt="part of a dog" />
+          </div>
+        </div>
+
+        <div class="finished-example">
+          <div class="image">
+            <img src="./assets/images/original_image.png" alt="a dog" />
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
