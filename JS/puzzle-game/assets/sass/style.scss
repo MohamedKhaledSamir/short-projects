@@ -6,11 +6,14 @@
   justify-content: center;
 }
 
+//GLOBALS START//
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   transition: 1s;
+  font-family: "Poppins", sans-serif;
 }
 
 img {
@@ -37,10 +40,17 @@ html {
   height: 100%;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-}
+//GLOBALS END//
 
+body {
+  &.win {
+    max-height: 100vh;
+    .win-screen {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
 .win-screen {
   @extend %center;
   position: absolute;
@@ -57,11 +67,6 @@ body {
     rgb(255, 196, 0),
     rgb(255, 153, 0)
   );
-
-  &.win {
-    opacity: 1;
-    pointer-events: all;
-  }
 
   h2 {
     font-size: 2rem;
