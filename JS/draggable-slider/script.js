@@ -1,10 +1,14 @@
+// DOM ELEMENTS
 const carousel = document.querySelector(".carousel"),
   main = document.querySelector("main"),
   firstCard = document.querySelector(".card"),
-  leftNav = document.querySelector(".left-nav"),
-  rightNav = document.querySelector(".right-nav");
+  leftArrow = document.querySelector(".left-nav"),
+  rightArrow = document.querySelector(".right-nav");
+// DOM ELEMENTS END
+
+// INiCIAL SETUP
 let swipe = false,
-  incialX,
+  inicialX,
   startScrollLeft,
   deviceType;
 const events = {
@@ -19,38 +23,20 @@ const events = {
     move: "touchmove",
   },
 };
-
-//By default no left nav arrow
-leftNav.style.display = "none";
-//By default no left nav arrow
-
+hideLeftArrow();
 checkDeviceType();
+// INiCIAL SETUP END
+
+// EVENTS
 carousel.addEventListener(events[deviceType].start, startDragging);
 carousel.addEventListener(events[deviceType].end, endDragging);
 carousel.addEventListener(events[deviceType].move, dragging);
-carousel.addEventListener("scroll", () => {
-  const remainingScrollRight = 50;
+carousel.addEventListener("scroll", checkArrows);
+rightArrow.addEventListener("click", scrollToRight);
+leftArrow.addEventListener("click", scrollToLeft);
+// EVENTS END
 
-  //check if there's no more right scroll space
-  carousel.scrollWidth - carousel.scrollLeft <=
-  carousel.clientWidth + remainingScrollRight
-    ? (rightNav.style.display = "none")
-    : (rightNav.style.display = "flex");
-
-  //check if there's no more left scroll space
-  carousel.scrollLeft < firstCard.scrollWidth
-    ? (leftNav.style.display = "none")
-    : (leftNav.style.display = "flex");
-});
-
-rightNav.addEventListener("click", () => {
-  carousel.scrollLeft += firstCard.offsetWidth;
-});
-leftNav.addEventListener("click", () => {
-  carousel.scrollLeft -= firstCard.offsetWidth;
-});
-
-/*FUNCTIONS*/
+//FUNCTIONS
 function checkDeviceType() {
   try {
     document.createEvent("TouchEvent");
@@ -61,18 +47,69 @@ function checkDeviceType() {
   }
 }
 function startDragging(e) {
-  swipe = true;
-  incialX = deviceType == "mouse" ? e.pageX : e.touches[0].pageX;
+  allowSwiping();
+  inicialX = deviceType == "mouse" ? e.pageX : e.touches[0].pageX;
   startScrollLeft = carousel.scrollLeft;
 }
 function dragging(e) {
   if (!swipe) return;
-
-  let newX = deviceType == "mouse" ? e.pageX : e.touches[0].pageX;
   main.classList.add("dragging");
-  carousel.scrollLeft = startScrollLeft - (newX - incialX);
+  let newX = deviceType == "mouse" ? e.pageX : e.touches[0].pageX;
+  carousel.scrollLeft = startScrollLeft - getCursorMovedSpace(newX);
 }
 function endDragging() {
-  swipe = false;
+  disableSwiping();
   main.classList.remove("dragging");
 }
+
+function availableScrollRight() {
+  const rightCarouselGap = 50;
+  return (
+    carousel.scrollWidth - carousel.scrollLeft >
+    carousel.clientWidth + rightCarouselGap
+  );
+}
+
+function availableScrollLeft() {
+  return carousel.scrollLeft >= firstCard.scrollWidth;
+}
+
+function getCursorMovedSpace(newX) {
+  return newX - inicialX;
+}
+
+function allowSwiping() {
+  swipe = true;
+}
+function disableSwiping() {
+  swipe = false;
+}
+
+function scrollToLeft() {
+  carousel.scroll({
+    left: carousel.scrollLeft - firstCard.offsetWidth,
+    behavior: "smooth",
+  });
+}
+
+function scrollToRight() {
+  carousel.scroll({
+    left: carousel.scrollLeft + firstCard.offsetWidth,
+    behavior: "smooth",
+  });
+}
+
+function hideLeftArrow() {
+  leftArrow.style.display = "none";
+}
+
+function checkArrows() {
+  availableScrollRight()
+    ? (rightArrow.style.display = "flex")
+    : (rightArrow.style.display = "none");
+
+  availableScrollLeft()
+    ? (leftArrow.style.display = "flex")
+    : (leftArrow.style.display = "none");
+}
+//FUNCTIONS END

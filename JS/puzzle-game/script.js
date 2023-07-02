@@ -29,6 +29,7 @@ function movingPiecesLogic() {
       let rowStart = parseInt(pieceStyle.getPropertyValue("grid-row-start"));
       let rowEnd = parseInt(pieceStyle.getPropertyValue("grid-row-end"));
 
+      //getting around pieces
       let aroundPieces = [
         {
           //right piece
